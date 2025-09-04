@@ -2,6 +2,7 @@ package tests;
 
 import com.automation.qabrains.pages.ECommerceSitePage;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.utils.Constant;
 
@@ -28,6 +29,8 @@ public class ECommerceSiteTest extends BaseTest {
         eCommerceSitePage.clickContinueButton();
         eCommerceSitePage.clickFinishButton();
         Thread.sleep(2000);
+        Assert.assertEquals(  eCommerceSitePage.getSuccessMessage(), "THANK YOU FOR YOUR ORDER!");
+
 
     }
 }

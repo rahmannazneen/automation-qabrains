@@ -17,6 +17,8 @@ public class ECommerceSitePage extends BasePage {
     private final By lastNameInput = By.cssSelector("input[placeholder='Ex. Doe']");
     private final By continueButton = By.xpath("//button[.//span[text()='Continue']]");
     private final By finishButton = By.xpath("//button[.//span[text()='Finish']]");
+    private final By successMessage = By.cssSelector("h3.text-lg.uppercase.font-black.font-oswald.mb-4");
+
 
 
     public ECommerceSitePage(WebDriver driver) {
@@ -59,6 +61,9 @@ public class ECommerceSitePage extends BasePage {
     }
     public void clickFinishButton() {
         click(finishButton);
+    }
+    public String getSuccessMessage() {
+        return getText(successMessage);
     }
 }
 

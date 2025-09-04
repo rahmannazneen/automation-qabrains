@@ -5,6 +5,8 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
+import java.util.List;
+import java.util.Random;
 
 public class BasePage {
 
@@ -38,12 +40,6 @@ public class BasePage {
     protected void click(By locator) {
         waitUntilVisible(locator).click();
     }
-//    public void scrollToElement(By locator) {
-//        WebElement element = webDriver.findElement(locator);
-//        JavascriptExecutor js = (JavascriptExecutor) webDriver;
-//        js.executeScript("arguments[0].scrollIntoView(true);", element);
-//    }
-
     protected void select(By locator, String item) {
         WebElement dropdown = webDriver.findElement(locator);
         Select select = new Select(dropdown);
@@ -55,14 +51,16 @@ public class BasePage {
         fileInput.sendKeys(filePath);
     }
 
+    protected void addRandomProductToCart(By locator){
+        List<WebElement> products = webDriver.findElements(locator);
 
-//    public void navigateTo(String url) {
-//        webDriver.get(url);
-//    }
-//
-//    public String getPageTitle() {
-//        return webDriver.getTitle();
-//    }
-
-
+        if (products.size() > 0) {
+            Random rand = new Random();
+            int randomIndex = rand.nextInt(products.size()); // random index
+            products.get(randomIndex).click();
+            System.out.println("Clicked Add to Cart for product index: " + randomIndex);
+        } else {
+            System.out.println("No products found on the page!");
+        }
+    }
 }

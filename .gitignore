@@ -1,0 +1,12 @@
+# Maven
+target/
+
+# Java
+*.class
+*.log
+*.jar
+*.war
+*.ear
+
+# IntelliJ IDEA
+.idea/

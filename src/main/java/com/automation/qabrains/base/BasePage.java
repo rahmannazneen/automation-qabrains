@@ -1,8 +1,8 @@
 package com.automation.qabrains.base;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
@@ -34,6 +34,7 @@ public class BasePage {
         element.clear();
         element.sendKeys(text);
     }
+
     protected void click(By locator) {
         waitUntilVisible(locator).click();
     }
@@ -43,12 +44,16 @@ public class BasePage {
 //        js.executeScript("arguments[0].scrollIntoView(true);", element);
 //    }
 
+    protected void select(By locator, String item) {
+        WebElement dropdown = webDriver.findElement(locator);
+        Select select = new Select(dropdown);
+        select.selectByValue(item);
+    }
 
-
-
-
-
-
+    protected void upload(By locator, String filePath) {
+        WebElement fileInput = webDriver.findElement(locator);
+        fileInput.sendKeys(filePath);
+    }
 
 
 //    public void navigateTo(String url) {
@@ -58,7 +63,6 @@ public class BasePage {
 //    public String getPageTitle() {
 //        return webDriver.getTitle();
 //    }
-
 
 
 }

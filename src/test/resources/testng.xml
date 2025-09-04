@@ -10,6 +10,12 @@
                     <include name="navigateLinksTest"/>
                 </methods>
             </class>
+            <class name="tests.FormSubmissionTest">
+                <methods>
+                    <include name="validFormTest"/>
+                    <include name="invalidFormTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

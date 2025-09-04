@@ -16,6 +16,12 @@
                     <include name="invalidFormTest"/>
                 </methods>
             </class>
+            <class name="tests.ECommerceSiteTest">
+                <methods>
+                    <include name="validFormTest"/>
+                    <include name="addItemsToCartTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

@@ -6,5 +6,11 @@ public class Constant {
     public final static String login_password = "Password123";
     public final static String wrong_login_username = "qa@qabrains.com";
     public final static String wrong_login_password = "Password1234";
+    public final static String name = "Test User";
+    public final static String email= "qatest@yopmail.com";
+    public final static String contact = "01367654678";
+    public final static String date = "04092025";
+    public final static String file = "C:/Users/nazneen.rahman/Desktop/image.jpg";
+    public final static String countryName = "Canada";
 
 }

@@ -4,6 +4,7 @@ public class Constant {
 
     public final static String login_username = "qa_testers@qabrains.com";
     public final static String login_password = "Password123";
+    public final static String feedback = "Hello, working on this website has been a pleasant experience.";
     public final static String E_login_username = "test@qabrains.com";
     public final static String E_login_password = "Password123";
     public final static String E_first_name= "QA";

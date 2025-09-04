@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation" allow-return-values="true">
+    <test name="UI Test">
+        <classes>
+            <class name="tests.UserAuthenticationTest">
+                <methods>
+                    <include name="validLoginTest"/>
+                    <include name="invalidLoginTest"/>
+                    <include name="navigateLinksTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

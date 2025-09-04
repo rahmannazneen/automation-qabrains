@@ -20,6 +20,7 @@ public class UserAuthenticationTest extends BaseTest {
         Thread.sleep(2000);
     }
 
+
     @Test(priority = 2)
     public void invalidLoginTest() throws InterruptedException {
         UserAuthenticationPage userAuthenticationPage = new UserAuthenticationPage(webDriver);
@@ -31,11 +32,21 @@ public class UserAuthenticationTest extends BaseTest {
         Thread.sleep(2000);
     }
 
+
     @Test(priority = 3)
-    public void navigateLinksTest()  {
+    public void navigateLinksTest() throws InterruptedException {
         UserAuthenticationPage userAuthenticationPage = new UserAuthenticationPage(webDriver);
         userAuthenticationPage.clickRegistrationLink();
         userAuthenticationPage.clickForgotPasswordLink();
+        Thread.sleep(2000);
+    }
+    @Test(priority = 4)
+    public void enterFeedbackTest() throws InterruptedException {
+        UserAuthenticationPage userAuthenticationPage = new UserAuthenticationPage(webDriver);
+        userAuthenticationPage.enterFeedback(Constant.feedback);
+        Thread.sleep(2000);
+        userAuthenticationPage.clickSubmitButton();
 
     }
+
 }

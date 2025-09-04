@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 
 public class UserAuthenticationPage extends BasePage {
 
-    private WebDriver driver;
 
     // Locators
     private By emailField = By.id("email");
@@ -17,6 +16,10 @@ public class UserAuthenticationPage extends BasePage {
     private By errorMsg = By.cssSelector("span.title.text-black.text-md");
     private By registrationLink = By.id("registration");
     private By forgotPasswordLink = By.id("forgot-password");
+
+    private final By feedbackInput = By.cssSelector("textarea[placeholder='Write Comment...']");
+    private final By submitButton = By.xpath("//button[normalize-space()='Submit']");
+    private final By feedbackList = By.xpath("//div[contains(@class,'feedback-list')]//p");
 
 
     public UserAuthenticationPage(WebDriver driver) {
@@ -54,5 +57,14 @@ public class UserAuthenticationPage extends BasePage {
 
     public void clickForgotPasswordLink() {
         click(forgotPasswordLink);
+    }
+
+    public void enterFeedback(String message) {
+        type(feedbackInput, message);
+    }
+
+
+    public void clickSubmitButton() {
+        click(submitButton);
     }
 }

@@ -8,6 +8,7 @@
                     <include name="validLoginTest"/>
                     <include name="invalidLoginTest"/>
                     <include name="navigateLinksTest"/>
+                    <include name="enterFeedbackTest"/>
                 </methods>
             </class>
         </classes>

@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 public class ECommerceSitePage extends BasePage {
 
 
+    private final By eCommerceSite = By.cssSelector("li[id='ecommerce-site'] span[class='text flex-1']");
+    private final By eCommerceSiteLink = By.xpath("//a[@class='text-blue-600']");
     private final By emailField = By.id("email");
     private final By passwordField = By.id("password");
     private final By loginButton = By.xpath("//button[contains(text(),'Login')]");
@@ -25,6 +27,13 @@ public class ECommerceSitePage extends BasePage {
         super(driver);
     }
 
+
+    public void clickECommerceSite() {
+        click(eCommerceSite);
+    }
+    public void clickECommerceSiteLink() {
+        click(eCommerceSiteLink);
+    }
     public void enterLoginEmail(String username) {
         type(emailField, username);
     }

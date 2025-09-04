@@ -12,6 +12,8 @@ public class ECommerceSiteTest extends BaseTest {
     public void validLoginTest() {
         ECommerceSitePage eCommerceSitePage = new ECommerceSitePage(webDriver);
 
+        eCommerceSitePage.clickECommerceSite();
+        eCommerceSitePage.clickECommerceSiteLink();
         eCommerceSitePage.enterLoginEmail(Constant.E_login_username);
         eCommerceSitePage.enterLoginPassword(Constant.E_login_password);
         eCommerceSitePage.clickLogin();
